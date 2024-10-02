@@ -6,7 +6,7 @@ from battle import Battle
 class Game:
   def __init__(self):
     pygame.init()
-    self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
+    screen = pygame.display.set_mode((WIDTH, HEIGHT))
     pygame.display.set_caption("Juego de Rol Simple")
 
 
@@ -19,7 +19,7 @@ class Game:
 
 
     self.background_img = pygame.image.load("assets/background.jpg")
-    self.background_img = pygame.transform.scale(self.background_img, (WIDTH, HEIGHT))
+    self.background_img = pygame.transform.scale(background_img, (WIDTH, HEIGHT))
 
     # Crear jugadores
     self.player = Player("Hero", 100, 20, player_img)
@@ -39,8 +39,8 @@ class Game:
     self.screen.blit(self.enemy.image, enemy_pos)
     
     # Dibujar barras de vida
-    pygame.draw.rect(self.screen, (255, 0, 0), (100, 250, self.player.hp, 20))
-    pygame.draw.rect(self.screen, (255, 0, 0), (600, 250, self.enemy.hp, 20))
+    pygame.draw.rect(self.screen, (255, 0, 0), (100, 250, player.hp, 20))
+    pygame.draw.rect(self.screen, (255, 0, 0), (600, 250, enemy.hp, 20))
     
     # Dibujar nombres y HP
     font = pygame.font.Font(None, 36)
